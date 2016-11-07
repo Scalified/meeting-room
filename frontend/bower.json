@@ -1,0 +1,10 @@
+{
+  "name": "meetingRoom",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.7.0"
+  },
+  "devDependencies": {},
+  "overrides": {}
+}

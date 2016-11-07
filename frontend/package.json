@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "name": "meetingRoom",
+  "devDependencies": {
+    "bower": "^1.7.9"
+  },
+  "engines": {},
+  "scripts": {},
+  "dependencies": {}
+}
