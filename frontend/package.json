@@ -2,7 +2,10 @@
   "version": "1.0.0",
   "name": "meetingRoom",
   "devDependencies": {
-    "bower": "^1.7.9"
+    "bower": "^1.7.9",
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^2.0.0"
   },
   "engines": {},
   "scripts": {},
