@@ -6,5 +6,6 @@
     "font-awesome": "fontawesome#^4.7.0"
   },
   "devDependencies": {},
-  "overrides": {}
+  "overrides": {},
+  "appPath": "app"
 }

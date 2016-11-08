@@ -15,3 +15,11 @@
 textarea {
     resize: vertical;
 }
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: aqua;
+    color: navy;
+    padding: 0.2em 0;
+    height: 100px;
+}

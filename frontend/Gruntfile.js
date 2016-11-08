@@ -1,31 +1,43 @@
+'use strict';
+
 module.exports = function(grunt) {
 
-    // Tasks
+    // Time how long tasks take. Can help when optimizing build times
+    require('time-grunt')(grunt);
+
+    // Configurable paths for the application
+    var appConfig = {
+        app: require('./bower.json').appPath || 'app',
+        tmp: {js: '.tmp/js', root: '.tmp'},
+        dist: 'dist'
+    };
+
+    // Define the configuration for all the tasks
+    // can be used like this: grunt.config.get('testMode')
     grunt.initConfig({
-        // Concat Task
-        concat: {
-            main: {
-                src: [
-                    'js/**/*.js'  // all JS-files in the folder
-                ],
-                dest: 'build/scripts.js'
-            }
-        },
-        // Compress Task
-        uglify: {
-            main: {
-                files: {
-                    // result of the concat task
-                    'build/scripts.min.js': '<%= concat.main.dest %>'
-                }
-            }
-        }
+        // Project settings
+        yeoman: appConfig
     });
 
-    // load installed plugins via npm
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadTasks('grunt-tasks');
 
-    // default Task
-    grunt.registerTask('default', ['concat', 'uglify']);
+    grunt.registerTask('build',[
+        /*'useminPrepare',
+        'concat',
+        'cssmin',
+        'uglify',
+        'filerev',
+        'usemin'*/
+
+        'useminPrepare',
+        'concat:generated',
+        'cssmin:generated',
+        'uglify:generated',
+        'filerev',
+        'usemin'
+    ]);
+
+    grunt.registerTask('default',['build'], function () {
+        grunt.log.write('default task ...');
+    });
 };
