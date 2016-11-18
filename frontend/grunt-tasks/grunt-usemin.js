@@ -1,19 +1,19 @@
 module.exports = function (grunt) {
-
+    grunt.loadNpmTasks('grunt-usemin');
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
     grunt.config('useminPrepare', {
         // changed from app to dist, to take index.html processed by includeSource in dist
-        html: '<%= yeoman.app %>/index.html',
+        html: '<%= yeoman.tmp.root %>/index.html',
         options: {
             dest: '<%= yeoman.dist %>',
-            root: '<%= yeoman.tmp.js %>',
+            //root: '<%= yeoman.tmp.root %>',
             flow: {
                 html: {
                     steps: {
-                        js: ['concat', 'uglifyjs'],
-                        css: ['concat', 'cssmin']
+                        js: ['concat','uglify'],
+                        css: ['concat','cssmin']
                     },
                     post: {}
                 }
@@ -31,10 +31,10 @@ module.exports = function (grunt) {
                 '<%= yeoman.dist %>',
                 '<%= yeoman.dist %>/images',
                 '<%= yeoman.dist %>/styles'
-            ],
+            ]/*,
             patterns: {
                 js: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
-            }
+            }*/
         }
     });
 };

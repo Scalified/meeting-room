@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "font-awesome": "fontawesome#^4.7.0"
+    "font-awesome": "fontawesome#^4.7.0",
+    "angular": "^1.5.8",
+    "angular-component-router": "^0.2.1"
   },
   "devDependencies": {},
-  "overrides": {},
   "appPath": "app"
 }
