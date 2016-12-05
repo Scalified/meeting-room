@@ -26,6 +26,31 @@ module.exports = function (grunt) {
                 }
             ]
         },
+        js: {
+            files: [
+                {
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>',
+                    dest: '<%= yeoman.tmp.root %>',
+                    src: ['**/*.js']
+                }
+            ]
+        },
+        styles: {
+            files: [
+                {
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>',
+                    dest: '<%= yeoman.tmp.root %>',
+                    src: [
+                        '**/*.css',
+                        '**/*.scss'
+                    ]
+                }
+            ]
+        },
         dist: {
             files: [
                 {

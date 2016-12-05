@@ -28,7 +28,7 @@
   },
   "scripts": {
     "prestart": "npm install && grunt build",
-    "start": "http-server ./.dist -a 0.0.0.0 -p 8000",
+    "start": "http-server .dist -a 0.0.0.0 -p 8000",
     "postinstall": "bower install"
   },
   "dependencies": {}

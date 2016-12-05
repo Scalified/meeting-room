@@ -1,5 +1,5 @@
 module.exports = function (grunt) {
-    //var pushState = require('grunt-connect-pushstate/lib/utils').pushState;
+    
     var serveStatic = require('serve-static');
 
     // The actual grunt server settings
@@ -8,19 +8,14 @@ module.exports = function (grunt) {
                 port: 3000,
                 livereload: 35729,
                 hostname: 'localhost'
-                //base: ['<%= yeoman.tmp.root %>']
             },
             livereload: {
                 options: {
                     open:true,
                     middleware: function (connect) {
                         return [
-                            //pushState(),
 
-                            //connect.static('.tmp'),
                             serveStatic('.tmp'),
-
-                            //connect.static('.tmp/scripts'),
                             serveStatic('.tmp/scripts'),
 
                             connect().use(

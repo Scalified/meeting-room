@@ -15,12 +15,18 @@ module.exports = function (grunt) {
         dev: {
             files: [{
                 //'<%= yeoman.tmp.root %>/index.html': '<%= yeoman.app %>/index.html'
-
                 expand: true,
                 cwd: '<%= yeoman.app %>',
                 src: ['**/*.html'],
                 dest: '<%= yeoman.tmp.root %>'
-            }]
+            },
+            {
+                expand: true,
+                cwd: '<%= yeoman.app %>',
+                src: ['**/*.js'],
+                dest: '<%= yeoman.tmp.root %>'
+             }
+           ]
         },
         dist: {
             files: [{
@@ -32,7 +38,6 @@ module.exports = function (grunt) {
                 dest: '<%= yeoman.dist %>'
             }]
         }
-
     });
 
 };

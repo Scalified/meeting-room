@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     // Configurable paths for the application
     var appConfig = {
         app: require('./bower.json').appPath || 'app',
-        tmp: {js: '.tmp/js', root: '.tmp'},
+        tmp: {js: '.tmp/js', root: '.tmp', scripts: '.tmp/scripts'},
         dist: '.dist'
     };
 
@@ -41,7 +41,6 @@ module.exports = function(grunt) {
         app: {
             // Application variables
             scripts: [
-                
                 "**/*.js"
             ]
         }
