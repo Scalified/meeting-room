@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="mrBase" ng-controller="appController as $ctrl">
+<head>
+
+    <meta charset="utf-8">
+    <title>Home of the Meeting Room Page</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- build:css({.,.tmp}) styles/styles.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+    <!-- endbower -->
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-component-router/angular_1_router.js"></script>
+    <script src="bower_components/angular-component-router/ng_route_shim.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,.tmp/scripts}) scripts/customs.js -->
+    <!-- JS files to be included by Grunt's 'includeSource' task into index.html -->
+    <!-- include: "type": "js", "files": [
+        "scripts/**/*.js",
+        "**/*.js"
+     ] -->
+    <!-- /include -->
+    <!-- endbuild -->
+
+    <!--Automatically Including src files(js or css) into index.html :
+    grunt-wiredep: for bower packages, which be installed (js or css),
+    grunt-include-source: for customs scripts, which be addded (js or css)-->
+
+</head>
+
+<body id="body">
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <strong><a href="http://browsehappy.com/" style="color: orangered">upgrade
+    your browser</a></strong> to improve your experience.</p>
+<![endif]-->
+<h1 style="text-align: center">Home of Meeting Room</h1>
+<app>REWRITE THIS</app>
+</body>
+</html>

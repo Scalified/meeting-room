@@ -1,0 +1,25 @@
+.btn-custom {
+    width: 200px;
+}
+
+.section-success {
+    background-color: #5cb85c !important;
+    color: #ffffff;
+}
+
+.section {
+    position: relative;
+    padding: 35px 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: aqua;
+    color: navy;
+    padding: 0.2em 0;
+    height: 100px;
+}
