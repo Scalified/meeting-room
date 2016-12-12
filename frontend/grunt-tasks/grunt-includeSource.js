@@ -1,40 +1,23 @@
 module.exports = function (grunt) {
 
-    // include .js scripts to index.html
+    //Include source files into HTML files automatically (js, css , .. other files ) wich haves the section  <!-- include --> .. <!-- /include -->
     grunt.config('includeSource', {
         options: {
             basePath: 'app'
-            //baseUrl: '',
-            /*templates: {
-                html: {
-                    js: '<script src="{filePath}"></script>',
-                    css: '<link rel="stylesheet" type="text/css" href="{filePath}" />'
-                }
-            }*/
         },
         dev: {
             files: [{
-                //'<%= yeoman.tmp.root %>/index.html': '<%= yeoman.app %>/index.html'
                 expand: true,
                 cwd: '<%= yeoman.app %>',
-                src: ['**/*.html'],
+                src: ['**/*.html', '!prototype/**'],  //ignore /prototype directory
                 dest: '<%= yeoman.tmp.root %>'
-            },
-            {
-                expand: true,
-                cwd: '<%= yeoman.app %>',
-                src: ['**/*.js'],
-                dest: '<%= yeoman.tmp.root %>'
-             }
-           ]
+            }]
         },
         dist: {
             files: [{
-                //'<%= yeoman.dist %>/index.html': '<%= yeoman.app %>/index.html'
-
                 expand: true,
                 cwd: '<%= yeoman.app %>',
-                src: ['**/*.html'],
+                src: ['**/*.html', '!prototype/**'],
                 dest: '<%= yeoman.dist %>'
             }]
         }

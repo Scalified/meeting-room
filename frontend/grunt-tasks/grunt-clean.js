@@ -5,18 +5,22 @@ module.exports = function (grunt) {
         options: {
             force: true
         },
+        dev: {
+            files: [{
+                dot: true,
+                src: ['.dist', '.tmp']
+            }]
+        },
         dist: {
             files: [{
                 dot: true,
                 src: [
-                    //'.tmp',
-                    '<%= yeoman.tmp.root %>/{,*/}*',    //delete all files in .tmp /directory
-                    '<%= yeoman.dist %>/{,*/}*',
-                    '!<%= yeoman.dist %>/.git{,*/}*'    /* don't delete .git/ folder */
+                    '<%= yeoman.tmp.root %>',              //delete directory  .tmp
+                    '<%= yeoman.dist %>/{,*/}*'
                 ]
             }]
         },
-        server: ['.sass-cache', '.tscache', '.tmp']
+        server: ['.tmp']
 
     });
 

@@ -8,12 +8,11 @@ module.exports = function (grunt) {
         html: '<%= yeoman.tmp.root %>/index.html',
         options: {
             dest: '<%= yeoman.dist %>',
-            //root: '<%= yeoman.tmp.root %>',
             flow: {
                 html: {
                     steps: {
-                        js: ['concat','uglify'],
-                        css: ['concat','cssmin']
+                        js: ['concat', 'uglify'],
+                        css: ['concat', 'cssmin']
                     },
                     post: {}
                 }
@@ -31,10 +30,7 @@ module.exports = function (grunt) {
                 '<%= yeoman.dist %>',
                 '<%= yeoman.dist %>/images',
                 '<%= yeoman.dist %>/styles'
-            ]/*,
-            patterns: {
-                js: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
-            }*/
+            ]
         }
     });
 };

@@ -12,33 +12,9 @@ module.exports = function (grunt) {
                     src: [
                         '**/*.js',
                         '**/*.html',
+                        '!prototype/**' //ignore /prototype directory
                     ]
                 },
-                {
-                    expand: true,
-                    dot: true,
-                    cwd: '<%= yeoman.app %>',
-                    dest: '<%= yeoman.tmp.root %>',
-                    src: [
-                        '**/*.css',
-                        '**/*.scss'
-                    ]
-                }
-            ]
-        },
-        js: {
-            files: [
-                {
-                    expand: true,
-                    dot: true,
-                    cwd: '<%= yeoman.app %>',
-                    dest: '<%= yeoman.tmp.root %>',
-                    src: ['**/*.js']
-                }
-            ]
-        },
-        styles: {
-            files: [
                 {
                     expand: true,
                     dot: true,
@@ -72,12 +48,6 @@ module.exports = function (grunt) {
                     cwd: '.tmp/images',
                     dest: '<%= yeoman.dist %>/images',
                     src: ['{,*/}*.*']
-                },
-                {
-                    //expand: true,
-                    //cwd: '<%= yeoman.tmp.root %>',
-                    //dest: '<%= yeoman.dist %>',
-                    //src: ['**/*.html']
                 }
             ]
         }

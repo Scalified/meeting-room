@@ -1,18 +1,13 @@
 'use strict';
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
-    //Include sources into HTML files automatically
-    grunt.loadNpmTasks('grunt-include-source');
-
-    // Automatically load required Grunt tasks
+    // Automatically load required npm module for Grunt tasks
     require('jit-grunt')(grunt);
 
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    
     // Configurable paths for the application
     var appConfig = {
         app: require('./bower.json').appPath || 'app',
@@ -47,31 +42,37 @@ module.exports = function(grunt) {
 
     });
 
+
+    //run all tasks from directory /grunt-tasks
     grunt.loadTasks('grunt-tasks');
 
-    grunt.task.run('includeSource');
-    
-    grunt.registerTask('serve',[
+    //use this task for developing mode only
+    grunt.registerTask('serve', [
+        'clean:dev',
+        'copy:dev',
+        'wiredep',
+        'includeSource:dev',
         'connect',
         'watch'
     ]);
 
-    grunt.registerTask('build',[
-        'clean:dist', //
+    grunt.registerTask('build', [
+        'clean:dist',
         'copy:dev',
         'wiredep',
-        'includeSource',//:dist
+        'includeSource',
         'imagemin',
         'useminPrepare',
         'concat',   //puts results to .tmp/concat
+        'ngAnnotate',
         'copy:dist',
         'cssmin',
         'uglify',
         'filerev',
         'usemin',
-        'htmlmin'
-        //'clean:server'
+        'htmlmin',
+        'clean:server'
     ]);
 
-    grunt.registerTask('default',['build']);
+    grunt.registerTask('default', ['build']);
 };

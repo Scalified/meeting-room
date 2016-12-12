@@ -1,7 +1,6 @@
 <!doctype html>
-<html ng-app="mrBase" ng-controller="appController as $ctrl">
+<html ng-app="mrBaseModule" ng-controller="appController as $ctrl">
 <head>
-
     <meta charset="utf-8">
     <title>Home of the Meeting Room Page</title>
     <meta name="keywords" content="">
@@ -9,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+    <base href="/">
 
     <!-- build:css({.,.tmp}) styles/styles.css -->
     <!-- bower:css -->
@@ -25,10 +25,12 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-component-router/angular_1_router.js"></script>
     <script src="bower_components/angular-component-router/ng_route_shim.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js({.tmp,.tmp/scripts}) scripts/customs.js -->
+    <!-- build:js({.tmp,.tmp/scripts}) scripts/sources.min.js -->
     <!-- JS files to be included by Grunt's 'includeSource' task into index.html -->
     <!-- include: "type": "js", "files": [
         "scripts/**/*.js",
@@ -45,10 +47,14 @@
 
 <body id="body">
 <!--[if lte IE 8]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <strong><a href="http://browsehappy.com/" style="color: orangered">upgrade
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <strong><a
+        href="http://browsehappy.com/" style="color: orangered">upgrade
     your browser</a></strong> to improve your experience.</p>
 <![endif]-->
-<h1 style="text-align: center">Home of Meeting Room</h1>
-<app>REWRITE THIS</app>
+
+<!--<h1 style="text-align: center">Home of Meeting Room</h1>-->
+<!--<app>REWRITE THIS</app>-->
+<!--<hr style="border-top: 2px solid green;"/>-->
+<div ng-view></div>
 </body>
 </html>
