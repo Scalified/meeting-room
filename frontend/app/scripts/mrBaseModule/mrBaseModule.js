@@ -1,8 +1,7 @@
 "use strict";
 
 var mrBaseModule = angular.module('mrBaseModule', [
-    'ngComponentRouter', 
-    'ngRoute',
+    'ngComponentRouter',
     'ngResource'
 ])
     .controller('appController', function ($timeout) {
@@ -11,26 +10,10 @@ var mrBaseModule = angular.module('mrBaseModule', [
             console.log('this is appController of Angular ');
         }, 2000);
     })
-    .config(function ($routeProvider, $locationProvider) {
-        $routeProvider
-            .when("/meetingRoom", {
-                templateUrl: "scripts/mrBaseModule/meetingRoom.html"
-            })
-            .when("/addNewCard", {
-                templateUrl: "scripts/mrBaseModule/newCard.html"
-            })
-            .when("/", {
-                templateUrl: "scripts/mrBaseModule/home.html"
-            })
-            .otherwise({
-                template: "<h3>Sorry, there is not such a path</h3>"
-            });
+    .value('$routerRootComponent', 'app') // Configure the top level routed (app Component)
+    .config(function ($locationProvider) { //$routeProvider
 
         // use the HTML5 History API
         $locationProvider.html5Mode({enabled: true});
 
-    })
-    .component('app', {
-        template: '<div style="color:red; text-align: center; margin-top: 20px; "><strong>This is the template of Meeting Room </strong>' +
-        '</div>'
     });

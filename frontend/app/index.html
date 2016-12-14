@@ -33,6 +33,7 @@
     <!-- build:js({.tmp,.tmp/scripts}) scripts/sources.min.js -->
     <!-- JS files to be included by Grunt's 'includeSource' task into index.html -->
     <!-- include: "type": "js", "files": [
+        "scripts/mrBaseModule/mrBaseModule.js",
         "scripts/**/*.js",
         "**/*.js"
      ] -->
@@ -44,17 +45,13 @@
     grunt-include-source: for customs scripts, which be addded (js or css)-->
 
 </head>
-
 <body id="body">
 <!--[if lte IE 8]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <strong><a
-        href="http://browsehappy.com/" style="color: orangered">upgrade
-    your browser</a></strong> to improve your experience.</p>
+        href="http://browsehappy.com/" style="color: orangered">upgrade your browser</a></strong> to improve your
+    experience.</p>
 <![endif]-->
 
-<!--<h1 style="text-align: center">Home of Meeting Room</h1>-->
-<!--<app>REWRITE THIS</app>-->
-<!--<hr style="border-top: 2px solid green;"/>-->
-<div ng-view></div>
+<app>REWRITE THIS</app>
 </body>
 </html>
