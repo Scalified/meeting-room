@@ -1,7 +1,5 @@
 module.exports = function (grunt) {
-
-    //grunt.loadNpmTasks('grunt-contrib-imagemin');
-
+    
     grunt.config('imagemin', {
         dist: {
             files: [{
