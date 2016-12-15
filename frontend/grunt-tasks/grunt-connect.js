@@ -1,5 +1,5 @@
 module.exports = function (grunt) {
-    var pushState = require('grunt-connect-pushstate/lib/utils').pushState;
+    var pushState = require('connect-pushstate');
     var serveStatic = require('serve-static');
 
     // The actual grunt server settings
