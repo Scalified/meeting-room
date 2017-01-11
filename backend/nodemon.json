@@ -1,0 +1,12 @@
+{
+  "verbose": true,
+  "ignore": [
+    "nodemon.json",
+    "public/*",
+    ".dist/*",
+    ".logs/*",
+    "*.log",
+    "Dockerfile",
+    "grunt-tasks/*"
+  ]
+}

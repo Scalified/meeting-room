@@ -1,5 +1,4 @@
 mrBaseModule.component('app', {
-    bindings: {},
     templateUrl: 'scripts/mrBaseModule/components/app/app.html',
     $routeConfig: [
         {path: '/', name: 'Home', component: 'home'},

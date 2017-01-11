@@ -23,3 +23,47 @@ textarea {
     padding: 0.2em 0;
     height: 100px;
 }
+
+/* --- Begin Datepicker Popup https://angular-ui.github.io/bootstrap/#/datepicker --- */
+.full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+}
+
+.partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+}
+
+.uib-clear {
+    display: none;
+}
+
+.uib-datepicker-current {
+    display: none;
+}
+
+/* --- End Datepicker Popup --- */
+
+/* --- Begin Validation of Forms  --- */
+.css-form input.ng-invalid.ng-touched {
+    background-color: #ffc1c4;
+    border-color: #ec5b5b;
+}
+
+.css-form textarea.ng-invalid.ng-touched {
+    background-color: #ffc1c4;
+    border-color: #ec5b5b;
+}
+
+/* --- End Datepicker Popup --- */
+
+.card-text {
+    word-wrap: break-word;
+}
+
+.errorTextValid {
+    color: #e25f5f;
+}

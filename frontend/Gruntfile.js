@@ -50,6 +50,7 @@ module.exports = function (grunt) {
     grunt.registerTask('serve', [
         'clean:dev',
         'copy:dev',
+        'replace:env',
         'wiredep',
         'includeSource:dev',
         'connect',
@@ -59,6 +60,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'copy:dev',
+        'replace:env',
         'wiredep',
         'includeSource',
         'imagemin',

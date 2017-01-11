@@ -11,13 +11,20 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-2">
-                <label class="control-label">select Date</label>
+                <label class="control-label">Select date</label>
             </div>
             <div class="col-sm-10">
-                <select class="form-control">
-                    <option>yyyy-mm-dd</option>
-                    <option>yyyy-mm-dd</option>
-                </select>
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup
+                           ng-model="$ctrl.datepicker.model" ng-change="$ctrl.getMeeting($ctrl.datepicker.model)"
+                           is-open="$ctrl.datepicker.opened"
+                           datepicker-options="$ctrl.datepicker.options" ng-required="true" close-text="Close"
+                           readonly/>
+                    <span class="input-group-btn" id="datespan1">
+                        <button type="button" class="btn btn-default" ng-click="$ctrl.datepicker.onOpen()"><i
+                                class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
             </div>
         </div>
     </div>
@@ -25,196 +32,34 @@
 <div class="section">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" ng-repeat="card in $ctrl.meetingList track by $index">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title text-primary">Name 1</h3>
+                        <h3 class="panel-title text-primary">{{card.name}}</h3>
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <strong>Done:</strong>
                             </div>
-                            <div class="col-md-10">SWP-100
-                                ----------------------------------------------------------------------------
+                            <div class="col-md-9 card-text">
+                                {{card.done}}
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <strong>ToDo:</strong>
                             </div>
-                            <div class="col-md-10">SWP-101
-                                -----------------------------------------------------------------------------------------------------------------
+                            <div class="col-md-9 card-text">
+                                {{card.todo}}
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <strong>Blocker/
                                     <br>Stopper:</strong>
                             </div>
-                            <div class="col-md-10">Bill John and his team</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-primary">Name 2</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <strong>Done:</strong>
-                            </div>
-                            <div class="col-md-10">SWP-200
-                                ----------------------------------------------------------------------------
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <strong>ToDo:</strong>
-                            </div>
-                            <div class="col-md-10">SWP-201
-                                -----------------------------------------------------------------------------------------------------------------
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <strong>Blocker/
-                                    <br>Stopper:</strong>
-                            </div>
-                            <div class="col-md-10">Bill John and his team</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-primary">Name 3</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <strong>Done:</strong>
-                            </div>
-                            <div class="col-md-10">SWP-300
-                                ----------------------------------------------------------------------------
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <strong>ToDo:</strong>
-                            </div>
-                            <div class="col-md-10">SWP-301
-                                -----------------------------------------------------------------------------------------------------------------
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <strong>Blocker/
-                                    <br>Stopper:</strong>
-                            </div>
-                            <div class="col-md-10">Bill John and his team</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-primary">Name 4</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <strong>Done:</strong>
-                            </div>
-                            <div class="col-md-10">SWP-400
-                                ----------------------------------------------------------------------------
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <strong>ToDo:</strong>
-                            </div>
-                            <div class="col-md-10">SWP-401
-                                -----------------------------------------------------------------------------------------------------------------
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <strong>Blocker/
-                                    <br>Stopper:</strong>
-                            </div>
-                            <div class="col-md-10">Bill John and his team</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-primary">Name 5</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <strong>Done:</strong>
-                            </div>
-                            <div class="col-md-10">SWP-500
-                                ----------------------------------------------------------------------------
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <strong>ToDo:</strong>
-                            </div>
-                            <div class="col-md-10">SWP-501
-                                -----------------------------------------------------------------------------------------------------------------
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <strong>Blocker/
-                                    <br>Stopper:</strong>
-                            </div>
-                            <div class="col-md-10">Bill John and his team</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-primary">Name 6</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <strong>Done:</strong>
-                            </div>
-                            <div class="col-md-10">SWP-600
-                                ----------------------------------------------------------------------------
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <strong>ToDo:</strong>
-                            </div>
-                            <div class="col-md-10">SWP-601
-                                -----------------------------------------------------------------------------------------------------------------
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <strong>Blocker/
-                                    <br>Stopper:</strong>
-                            </div>
-                            <div class="col-md-10">Bill John and his team</div>
+                            <div class="col-md-9 card-text">{{card.blocker}}</div>
                         </div>
                     </div>
                 </div>
@@ -223,6 +68,6 @@
     </div>
 </div>
 <div style="text-align: center; margin-top: 0px;">
-    <strong><a ng-link="['AddNewCard']">add a new Card</a></strong><br/>
-    <strong><a ng-link="['Home']">home</a></strong>
+    <strong><a ng-link="['AddNewCard']">Add a new card</a></strong><br/>
+    <strong><a ng-link="['Home']">Home</a></strong>
 </div>

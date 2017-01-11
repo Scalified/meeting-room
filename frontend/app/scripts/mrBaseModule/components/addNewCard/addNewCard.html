@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text-center">Add meeting Card</h1>
+                <h1 class="text-center">Add meeting card</h1>
             </div>
         </div>
     </div>
@@ -11,29 +11,54 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form class="form-horizontal" role="form">
+                <form class="form-horizontal css-form" role="form" name="addNewCardForm" novalidate>
                     <div class="form-group">
                         <div class="col-sm-2">
                             <label for="inputName" class="control-label">Name</label>
                         </div>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputName" placeholder="enter your name">
+                            <input type="text" class="form-control" id="inputName" name="inputName"
+                                   placeholder="enter your name"
+                                   ng-model="$ctrl.newCardModel.name" required="" pattern=".{2,}">
+                        </div>
+                        <br/>
+                        <div ng-show="addNewCardForm.$submitted || addNewCardForm.inputName.$touched">
+                            <div class="col-sm-2"></div>
+                            <div ng-show="addNewCardForm.inputName.$error.required"
+                                 class="errorTextValid col-sm-10">Please, enter your name.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-2">
-                            <label class="control-label">Done</label>
+                            <label class="control-label" for="done">Done</label>
                         </div>
                         <div class="col-sm-10">
-                            <textarea class="form-control" rows="5" maxlength="550"></textarea>
+                            <textarea class="form-control" id="done" name="done" rows="5" maxlength="550"
+                                      ng-model="$ctrl.newCardModel.done" required=""></textarea>
+                        </div>
+                        <br/>
+                        <div ng-show="addNewCardForm.$submitted || addNewCardForm.done.$touched">
+                            <div class="col-sm-2"></div>
+                            <div ng-show="addNewCardForm.done.$error.required"
+                                 class="errorTextValid col-sm-10">Please, describe what you have already done.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-2">
-                            <label class="control-label">ToDo</label>
+                            <label class="control-label" for="toDo">ToDo</label>
                         </div>
                         <div class="col-sm-10">
-                            <textarea class="form-control" rows="5"></textarea>
+                            <textarea class="form-control" id="toDo" name="toDo" rows="5"
+                                      ng-model="$ctrl.newCardModel.todo" required=""></textarea>
+                        </div>
+                        <br/>
+                        <div ng-show="addNewCardForm.$submitted || addNewCardForm.toDo.$touched">
+                            <div class="col-sm-2"></div>
+                            <div ng-show="addNewCardForm.toDo.$error.required"
+                                 class="errorTextValid col-sm-10">Please, describe what you are doing now.
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -41,7 +66,7 @@
                             <label class="control-label">Blocker/Stopper</label>
                         </div>
                         <div class="col-sm-10">
-                            <textarea class="form-control" rows="2"></textarea>
+                            <textarea class="form-control" rows="2" ng-model="$ctrl.newCardModel.blocker"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -49,10 +74,18 @@
                             <label class="control-label">Meeting start</label>
                         </div>
                         <div class="col-sm-10">
-                            <select class="form-control">
-                                <option>yyyy-mm-dd</option>
-                                <option>yyyy-mm-dd</option>
-                            </select>
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup
+                                       ng-model="$ctrl.newCardModel.date" is-open="$ctrl.datepicker.opened"
+                                       datepicker-options="$ctrl.datepicker.options" ng-required="true"
+                                       close-text="Close"
+                                       readonly/>
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-default"
+                                            ng-click="$ctrl.datepicker.onOpen()"><i
+                                            class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </p>
                         </div>
                     </div>
                 </form>
@@ -64,11 +97,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <a class="btn btn-lg btn-primary btn-custom">add Card</a>
+                <button class="btn btn-lg btn-primary btn-custom"
+                        ng-mousedown="$ctrl.addCard($ctrl.newCardModel)"
+                        ng-disabled="!addNewCardForm.$valid">
+                    Add card
+                </button>
             </div>
         </div>
     </div>
 </div>
 <div style="text-align: center; margin-top: 0px;">
-    <strong><a ng-link="['Home']">home</a></strong>
+    <strong><a ng-link="['Home']">Home</a></strong>
 </div>

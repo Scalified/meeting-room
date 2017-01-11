@@ -18,7 +18,7 @@ module.exports = function (grunt) {
                 '<%= yeoman.app %>/styles/{,*/}*.{css,scss}',
                 '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
             ],
-            tasks: ['copy:dev', 'includeSource:dev']
+            tasks: ['copy:dev', 'includeSource:dev', 'replace:env']
         }
     };
 

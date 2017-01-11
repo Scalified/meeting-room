@@ -25,6 +25,7 @@ module.exports = function (grunt) {
         html: ['<%= yeoman.dist %>/{,*/}*.html'],
         css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
         js: ['<%= yeoman.dist %>/scripts/{,*/}*.js'],
+        fonts: ['<%= yeoman.dist %>/fonts/{,*/}*.woff'],
         options: {
             assetsDirs: [
                 '<%= yeoman.dist %>',

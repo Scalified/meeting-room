@@ -39,8 +39,15 @@ module.exports = function (grunt) {
                 {
                     expand: true,
                     flatten: true,
-                    dest: '<%= yeoman.dist %>/styles/fonts/',
+                    dest: '<%= yeoman.dist %>/fonts/',
                     src: ['bower_components/font-awesome/fonts/*'],
+                    filter: 'isFile'
+                },
+                {
+                    expand: true,
+                    flatten: true,
+                    dest: '<%= yeoman.dist %>/fonts/',
+                    src: ['bower_components/bootstrap/dist/fonts/*'],
                     filter: 'isFile'
                 },
                 {
